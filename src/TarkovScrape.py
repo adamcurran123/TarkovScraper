@@ -24,7 +24,7 @@ def main():
             print("❌ No data received. Retrying in 10 minutes.")
 
         print("⏳ Waiting 10 minutes before checking again...\n")
-        time.sleep(600)  # Wait for 600 seconds (10 minutes)
+        time.sleep(1800)  # Wait for 600 seconds (10 minutes)
 
 if __name__ == "__main__":
     main()
