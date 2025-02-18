@@ -40,4 +40,4 @@ VENDOR_PRICES = {
 }
 # Telegram Bot Configuration (Get Token from BotFather)
 TELEGRAM_BOT_TOKEN = "7403207397:AAEjXWKrmQJ8UO-i0HHqddlZmyFQpazlKzs"
-TELEGRAM_CHAT_ID = "@adchopper"  # Replace with your chat ID
+TELEGRAM_CHAT_ID = "5180413003"  # Replace with your chat ID

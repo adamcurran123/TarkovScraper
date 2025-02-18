@@ -19,22 +19,20 @@ def fetch_item_prices():
         response.raise_for_status()
         data = response.json()
         
-        # Debugging: Log the entire response
-        print(f"API Response: {data}")
-        
+        # Remove full JSON data print
         if 'errors' in data:
-            print(f"GraphQL errors: {data['errors']}")
+            print(f"❌ GraphQL errors: {data['errors']}")
             return []
-        
+
         items = data.get('data', {}).get('items', [])
-        
-        # Debugging: Log the number of items fetched
-        print(f"Number of items fetched: {len(items)}")
-        
+
+        # Keep a short debug message
+        print(f"✅ Fetched {len(items)} items from API.")
+
         return items
     except requests.RequestException as e:
-        print(f"Request Error: {e}")
+        print(f"❌ Request Error: {e}")
         return []
     except ValueError as e:
-        print(f"JSON Decoding Error: {e}")
+        print(f"❌ JSON Decoding Error: {e}")
         return []
