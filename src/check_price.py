@@ -5,7 +5,11 @@ def check_prices(items):
     """Compare flea market prices to vendor prices and send alerts if under vendor price."""
     for item in items:
         name = item.get("name")
-        flea_price = item.get("avg24hPrice", 0)  # Get 24-hour average price
+        flea_price = item.get("avg24hPrice")  # Get 24-hour average price
+
+        if flea_price is None:
+            print(f"⚠️ Skipping '{name}' - No price data available.")
+            continue  # Skip items without valid pricing
 
         if name in VENDOR_PRICES and flea_price < VENDOR_PRICES[name]:
             vendor_price = VENDOR_PRICES[name]
